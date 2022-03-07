@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+using namespace std;
+int lcm(int a,int b)
+{   
+int m=max(a,b);
+while(m)
+{
+	if(m%a==0&&m%b==0)
+	{
+		break;
+	}
+	m++;
+}
+return m;
+}
+int gcd1(int a,int b)
+{
+	while(a!=b)
+	{
+		if(a>b)
+		{
+			a-=b;
+		}
+		else
+		{
+			b-=a;
+		}
+	}
+	return a;
+}
+int lcm1(int a,int b)
+{
+	int g=gcd1(a,b);
+	return (a*b)/g;  //lcm formula product of numbers by gcd of two numbers
+}
+int main()
+{
+	int a,b;
+	cout<<"enter the two numbers:";
+	cin>>a>>b;
+	cout<<"LCM normal method : "<<lcm(a,b)<<endl;
+	cout<<"LCM gcd method :"<<lcm1(a,b)<<endl;
+	
+}
