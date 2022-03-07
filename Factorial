@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+int factorial(int n)
+{
+	int fact=1;
+	for(int i=1;i<=n;i++)
+	{
+		fact*=i;
+	}
+	return fact;
+}
+int factorial1(int n)
+{
+	if(n==0)   //base condition of recursion method
+	{
+		return 1;
+	}
+	return n*factorial1(n-1); 
+}
+
+int main()
+{
+	int n;
+	cout<<"enter the number:";
+	cin>>n;
+	cout<<"Factorial of given number using iteration : "<<factorial(n)<<endl;
+	cout<<"Factorial of given number using recursion : "<<factorial1(n);
+}
