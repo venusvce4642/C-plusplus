@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+bool palindrome(int n)
+{
+	int rev=0;
+	int temp=n;
+	while(temp>0)
+	{
+		rev=rev*10+temp%10;//modulus with 10 gives you last digit
+		temp/=10;
+	}
+	if(rev==n)
+	{
+		return true;
+	}
+	return false;
+}
+
+int main()
+{
+	int n;
+	cout<<"enter the number:";
+	cin>>n;
+	if(palindrome(n))
+	{
+		cout<<"palindrome";
+    }	
+    else
+    {
+    	cout<<"not palindrome";
+	}
+}
