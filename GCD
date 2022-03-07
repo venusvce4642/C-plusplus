@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+using namespace std;
+int gcd(int a,int b)
+{   
+int m=min(a,b);
+while(m>0)
+{
+	if(a%m==0&&b%m==0)
+	{
+		break;
+	}
+	m--;
+}
+return m;
+}
+int gcd1(int a,int b)
+{
+	while(a!=b)
+	{
+		if(a>b)
+		{
+			a-=b;
+		}
+		else
+		{
+			b-=a;
+		}
+	}
+	return a;
+}
+int gcd2(int a,int b)
+{
+	if(b==0)
+	{
+		return a;
+	}
+	return gcd(b,a%b);
+}
+int main()
+{
+	int a,b;
+	cout<<"enter the two numbers:";
+	cin>>a>>b;
+	cout<<"GCD normal method : "<<gcd(a,b)<<endl;
+	cout<<"GCD Euclerian method :"<<gcd1(a,b)<<endl;
+	cout<<"GCD recursio : "<<gcd2(a,b)<<endl;
+	
+}
